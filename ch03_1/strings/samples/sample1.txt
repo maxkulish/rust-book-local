@@ -1,0 +1,2 @@
+Alright, this isn't so hard.
+First let's read a file to, a string.
