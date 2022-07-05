@@ -1,10 +1,14 @@
-
+#[derive(Debug)]
+enum IpAddr {
+    V4(u8, u8, u8, u8),
+    V6(String),
+}
 
 fn main() {
     
-    let some_u8_value = Some(4);
+    let home = IpAddr::V4(127, 0, 0, 255);
+    let loopback = IpAddr::V6(String::from("::1"));
 
-    if let Some(3) = some_u8_value {
-        println!("three");
-    }
+    println!("Home: {:#?}", home);
+    println!("Loopback: {:#?}", loopback);
 }
