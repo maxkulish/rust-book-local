@@ -1,34 +1,22 @@
 fn main() {
-    // long v declaration
-    let mut v: Vec<i32> = Vec::new();
+    let v = vec![1, 2, 3, 4, 5];
 
-    v.push(5);
-    v.push(6);
-    v.push(5);
-
-    println!("Vector: {:#?}", v);
-
-    // short
-    let mut v = vec![1, 2, 3, 4, 5];
-    println!("Vector: {:#?}", v);
-
-    // panicks if index out of range
-    let third: &i32 = &v[3];
+    let third: &i32 = &v[2];
     println!("The third element is {}", third);
 
-    // get returns None without panicking
-    match v.get(5) {
-        Some(third) => println!("The fifth element is {}", third),
-        None => println!("There is no fifth element"),
+    match v.get(2) {
+        Some(third) => println!("The third element is {}", third),
+        None => println!("There is no third element.")
     }
 
-    for i in &mut v {
-        *i += 1;
+    let v1 = vec![100, 32, 57];
+    for i in &v1 {
         println!("{}", i);
-    };
+    }
 
-    let word = String::from("नमस्ते!");
-    for c in word.bytes() {
-        println!("{}", c);
+    let mut v2 = vec![100, 44, 67];
+    for i in &mut v2 {
+        *i += 50;
+        println!("{}", i);
     }
 }

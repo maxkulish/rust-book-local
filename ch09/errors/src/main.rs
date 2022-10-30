@@ -1,12 +1,17 @@
 use std::fs;
 use std::io;
 
-fn read_username_from_file() -> Result<String, io::Error> {
+fn main() {
+    let path = String::from("hello.txt");
+    let user_name = read_username_from_file(&path);
 
-    fs::read_to_string("hello.txt")
+    match user_name {
+        Ok(user) => println!("user name: {}", user),
+        Err(e) => println!("can't read file from the file <{}>. Error: {}", &path, e)
+    }
+
 }
 
-fn main() {
-    let uname = read_username_from_file();
-    println!("{:?}", uname);
+fn read_username_from_file(path: &String) -> Result<String, io::Error> {
+    fs::read_to_string(path)
 }

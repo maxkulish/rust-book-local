@@ -4,21 +4,22 @@ fn largest<T: PartialOrd + Copy>(list: &[T]) -> T {
 
     for &item in list {
         if item > largest {
-            largest = item;
+            largest = item
         }
     }
 
     largest
 }
 
+
 fn main() {
-    let num_list = vec![12, 52, 10, 59];
+    let number_list = vec![34, 50, 25, 100, 65];
 
-    let result = largest(&num_list);
+    let result = largest(&number_list);
     println!("The largest number is {}", result);
 
-    let char_list = vec!["y", "m", "a", "q"];
+    let char_list = vec!['y', 'a', 'm', 'q'];
+
     let result = largest(&char_list);
-    println!("The largest number is {}", result);
+    println!("The largest char is {}", result);
 }
-
